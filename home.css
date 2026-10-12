@@ -84,3 +84,5 @@
 .gallery-card:not(.gallery-card-about) .gallery-view,.gallery-card:not(.gallery-card-about) .gallery-view b,.gallery-card:not(.gallery-card-about) .gallery-caption i{color:#fff}
 @media(max-width:760px){.gallery-card:not(.gallery-card-about) .gallery-cover{border-radius:24px}.gallery-card:not(.gallery-card-about) .gallery-caption{padding:28px 18px 16px}}
 .is-reading .gallery-card:not(.gallery-card-about) .gallery-caption{padding:15px 8px 7px}
+
+@media(min-width:761px) and (max-height:850px){.explorer-layout{padding-top:24px;padding-bottom:24px}.explorer-left{padding-top:0;padding-bottom:0}.explorer-identity{margin-bottom:18px}.explorer-identity h1{font-size:64px;margin:8px 0 10px}.theme-name{font-size:38px}.theme-navigation{gap:10px}.theme-caption{margin:16px 0 10px}.explorer-footer{margin-top:14px;padding-top:16px}}
