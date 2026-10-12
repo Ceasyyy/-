@@ -1,0 +1,86 @@
+/* A quiet theme index and a vertical, photographic carousel. */
+.home-view{padding:0}
+.home-explorer{position:relative;height:400svh}
+.explorer-layout{position:sticky;top:0;height:100svh;display:grid;grid-template-columns:43% 57%;padding:42px 7%;align-items:stretch}
+.explorer-left{display:flex;flex-direction:column;min-width:0;min-height:0;padding:5vh 12% 4vh 0}
+.explorer-identity{flex:none;margin-bottom:34px}
+.explorer-identity h1{font-family:var(--serif);font-size:clamp(60px,6.5vw,96px);font-weight:400;letter-spacing:-3px;line-height:1;margin:12px 0 15px}
+.explorer-identity h1>span{font-style:italic}
+.explorer-identity>p{font-size:12px;color:var(--muted);letter-spacing:1px;line-height:1.8}
+.explorer-identity>p>span{padding:0 10px}
+.left-content-slot{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;transition:opacity .2s,transform .35s var(--ease)}
+.left-content-slot.changing{opacity:0;transform:translateY(6px)}
+.theme-navigation{display:flex;flex-direction:column;gap:15px}
+.theme-navigation button{display:grid;grid-template-columns:24px minmax(0,1fr) 22px;gap:10px;align-items:center;width:100%;text-align:left;color:var(--muted);transition:color .3s}
+.theme-number{font-size:9px;letter-spacing:1px;font-family:var(--sans)}
+.theme-name{font-family:var(--serif);font-size:clamp(29px,3.8vw,57px);font-weight:400;line-height:1.2;letter-spacing:-1px}
+.theme-indicator{font-size:19px;opacity:0;transform:translate(-3px,3px);transition:opacity .3s,transform .3s}
+.theme-navigation button[aria-current],.theme-navigation button:hover{color:var(--ink)}
+.theme-navigation button[aria-current] .theme-name{font-style:italic}
+.theme-navigation button[aria-current] .theme-indicator,.theme-navigation button:hover .theme-indicator{opacity:1;transform:none}
+.theme-caption{font-size:12px;line-height:1.9;color:var(--muted);margin:30px 0 22px;min-height:23px}
+.open-current{display:inline-flex;align-items:center;gap:22px;width:max-content;font-size:9px;letter-spacing:1.6px;padding:12px 0;border-bottom:1px solid var(--line)}
+.open-current>span{font-size:17px;transition:transform .3s}.open-current:hover>span{transform:translateX(5px)}
+.explorer-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:none;padding-top:23px;margin-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:8px;letter-spacing:1.2px}
+.explorer-left .reader-scroll{height:100%;padding:0 14px 0 0;flex:1;min-height:0;overflow:auto;scrollbar-width:thin;overscroll-behavior:auto}
+.explorer-left .editorial-content h2{font-size:clamp(27px,2.5vw,37px);margin-top:22px}
+.explorer-left .editorial-content p{font-size:12px}
+.gallery-scene{position:relative;min-width:0;min-height:0;overflow:hidden;perspective:1300px;outline:none}
+.gallery-scene:focus-visible{outline:1px solid var(--line);outline-offset:6px}
+.gallery-track{position:absolute;inset:0;transform-style:preserve-3d}
+.gallery-card{position:absolute;top:50%;left:50%;width:min(88%,520px);transform:translate(-50%,-50%) translateY(var(--card-y,0px)) rotateX(var(--card-rotation,0deg)) scale(var(--card-scale,1));transform-style:preserve-3d;backface-visibility:hidden;will-change:transform,opacity}
+.gallery-cover{display:block;width:100%;text-align:left;background:none}
+.gallery-media{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:4/3;overflow:hidden}
+.gallery-media img{width:100%;height:100%;object-fit:cover;transition:transform .45s var(--ease)}
+.gallery-card-about .gallery-media img{width:52%;height:auto;aspect-ratio:3/4;object-fit:cover;max-height:100%}
+.gallery-card.is-active .gallery-cover:hover .gallery-media img{transform:scale(1.025)}
+.gallery-caption{display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:9px;line-height:1.8;letter-spacing:1.2px;margin-top:20px}
+.gallery-caption i{font-style:normal;color:#bbb;margin:0 10px}
+.gallery-view{white-space:nowrap;color:var(--muted)}.gallery-view b{font-size:17px;font-weight:400;color:var(--ink);display:inline-block;margin-left:12px;transition:transform .3s}
+.gallery-cover:hover .gallery-view b{transform:translate(3px,-3px)}
+.gallery-side-note{position:absolute;right:0;top:50%;writing-mode:vertical-rl;font-size:7px;letter-spacing:1.7px;color:#999;transform:translateY(-50%);pointer-events:none}
+.home-view #contact{margin:0 7%;padding-top:85px}
+@media(min-width:1700px){.explorer-layout{max-width:1700px;margin:0 auto}.home-view{max-width:none}}
+@media(max-width:1050px){.explorer-layout{padding:35px 5%;grid-template-columns:45% 55%}.explorer-left{padding-right:10%}.theme-name{font-size:36px}.explorer-identity h1{font-size:70px}.gallery-caption{font-size:8px;letter-spacing:.6px}.gallery-caption i{margin:0 5px}.gallery-side-note{display:none}}
+@media(max-width:760px){
+ .home-explorer{height:350svh}
+ .explorer-layout{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);padding:20px 6% 16px;gap:15px;height:100svh}
+ .explorer-left{padding:0;min-height:0}
+ .explorer-identity{margin:0 0 18px}.explorer-identity .eyebrow{font-size:8px;letter-spacing:1.3px}
+ .explorer-identity h1{font-size:51px;margin:7px 0 8px;letter-spacing:-2px}.explorer-identity>p{font-size:10px;letter-spacing:.6px}
+ .left-content-slot{flex:none;min-height:0}
+ .theme-navigation{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px}
+ .theme-navigation button{grid-template-columns:17px minmax(0,1fr) 12px;gap:6px}
+ .theme-number{font-size:7px}.theme-name{font-size:26px;letter-spacing:-.4px}.theme-indicator{font-size:13px}
+ .theme-caption{font-size:10px;margin:15px 0 5px;line-height:1.8;min-height:18px}
+ .open-current{font-size:8px;letter-spacing:1px;padding:8px 0;gap:15px}.open-current>span{font-size:14px}
+ .explorer-footer{font-size:7px;letter-spacing:.8px;margin-top:12px;padding-top:12px}
+ .gallery-card{width:min(90%,430px)}.gallery-caption{font-size:8px;margin-top:14px;gap:10px}.gallery-view b{margin-left:8px;font-size:15px}
+ .explorer-layout.is-reading{grid-template-rows:minmax(0,1fr) 125px}
+ .is-reading .explorer-identity{margin-bottom:16px}.is-reading .explorer-identity h1{font-size:40px}
+ .is-reading .left-content-slot{flex:1;min-height:0}.is-reading .explorer-left .reader-scroll{min-height:0;overflow:auto}
+ .is-reading .gallery-card{width:150px}.is-reading .gallery-card:not(.is-active){visibility:hidden}
+ .is-reading .gallery-caption{font-size:6px;letter-spacing:0;gap:4px;margin-top:6px}.is-reading .gallery-caption i{margin:0 3px}
+ .is-reading .gallery-view{display:none}.is-reading .gallery-media{aspect-ratio:4/3}
+ .home-view #contact{margin:0 6%;padding-top:55px}
+}
+@media(max-width:360px){.theme-name{font-size:23px}.theme-navigation{column-gap:12px}.explorer-layout{padding-top:16px}.explorer-identity h1{font-size:46px}}
+@media(prefers-reduced-motion:reduce){.gallery-card{will-change:auto}.gallery-card.is-active .gallery-cover:hover .gallery-media img{transform:none}}
+
+.theme-mobile{display:none}
+@media(max-width:760px){.theme-desktop{display:none}.theme-mobile{display:inline}.theme-name{font-size:23px;white-space:nowrap}}
+@media(max-width:360px){.theme-name{font-size:21px}}
+
+/* Keep the full reading stage inside the viewport below the quiet masthead. */
+.home-active #header{position:sticky;top:0;z-index:20;background:#fff}
+.explorer-layout{top:112px;height:calc(100svh - 112px)}
+.home-view #contact{scroll-margin-top:125px}
+@media(max-width:760px){.explorer-layout{top:95px;height:calc(100svh - 95px)}.home-view #contact{scroll-margin-top:108px}}
+
+/* Matching framed covers for the final three homepage chapters. */
+.gallery-card:not(.gallery-card-about) .gallery-cover{position:relative;border:1px solid #e3e3df;border-radius:30px;overflow:hidden;background:#f5f5f2;aspect-ratio:1/1}
+.gallery-card:not(.gallery-card-about) .gallery-media{height:100%;aspect-ratio:1/1}
+.gallery-card:not(.gallery-card-about) .gallery-caption{position:absolute;bottom:0;left:0;right:0;padding:40px 24px 22px;margin:0;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.55))}
+.gallery-card:not(.gallery-card-about) .gallery-view,.gallery-card:not(.gallery-card-about) .gallery-view b,.gallery-card:not(.gallery-card-about) .gallery-caption i{color:#fff}
+@media(max-width:760px){.gallery-card:not(.gallery-card-about) .gallery-cover{border-radius:24px}.gallery-card:not(.gallery-card-about) .gallery-caption{padding:28px 18px 16px}}
+.is-reading .gallery-card:not(.gallery-card-about) .gallery-caption{padding:15px 8px 7px}
